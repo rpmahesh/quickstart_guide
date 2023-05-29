@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get started with a Web App &mdash; EAA Quickstart Guide 0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Get started with a TCP-type Client-Access App" href="tcp_app.html" />
+    <link rel="prev" title="Get started with a Bookmark App" href="bookmark_app.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            EAA Quickstart Guide
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Bookmark App</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="bookmark_app.html">Get started with a Bookmark App</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Web App</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Get started with a Web App</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#create-download-and-install-an-access-identity-connector">Create, download and install an Access Identity Connector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#add-users-to-the-cloud-directory">Add users to the Cloud Directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-an-akamai-identity-provider-idp-associate-the-cloud-directory-and-deploy-the-idp">Create an ​Akamai​ Identity Provider (IdP), associate the Cloud Directory, and deploy the IdP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configure-a-web-application">Configure a Web application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#add-an-authentication-source-and-deploy-the-application">Add an authentication source, and deploy the application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#verify-you-can-access-the-web-application-from-the-eaa-login-portal">Verify you can access the Web Application from the EAA Login Portal</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">TCP Client-access App</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tcp_app.html">Get started with a TCP-type Client-Access App</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">EAA Quickstart Guide</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Get started with a Web App</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/web_app.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="get-started-with-a-web-app">
+<span id="getstartedwithwebapp"></span><h1>Get started with a Web App<a class="headerlink" href="#get-started-with-a-web-app" title="Permalink to this heading"></a></h1>
+<p>Web applications are used by an enterprise and reside in the app server within the data center.</p>
+<p>To provide secure access with Enterprise Application Access (EAA), attach an access and identity connector to the web application server
+inside the data center. The connector does a dialout to the Enterprise Application Access Cloud on port 443. The users connect to the
+Enterprise Application Access Login Portal URL in their web browsers. They provide their credentials once to gain access to all of the
+applications.</p>
+<blockquote>
+<div><figure class="align-default">
+<img alt="_images/web_app.jpg" src="_images/web_app.jpg" />
+</figure>
+</div></blockquote>
+<p>Set up a web application and learn how to:</p>
+<ul class="simple">
+<li><p>Create and install a connector in Amazon AWS environment.</p></li>
+<li><p>Add users to the EAA Cloud directory, create an Akamai identity provider (IdP).</p></li>
+<li><p>Associate the directory and deploy the IdP.</p></li>
+<li><p>Configure a web application (HTTPS application) with time-based access control rules (ACL) for restricted access to
+certain users at specific times.</p></li>
+<li><p>Add authentication with the identity provider (IdP) for the web application.</p></li>
+<li><p>Verify if the user can access the web application using the external hostname.</p></li>
+</ul>
+<p>Start with a simple configuration:</p>
+<ul class="simple">
+<li><p>Use the cloud directory in EAA (do not use any other Active Directory or LDAP).</p></li>
+<li><p>Use the EAA cloud domain (do not use any custom external domain). You do not have to configure and
+upload certificates.</p></li>
+</ul>
+<p>Also, we skip for now application services like URL rewrite rules for optimized content delivery, URL path-based policies,
+and use of Internet Content Adaptation Protocol (ICAP) for offload-processing of internet-based content by dedicated servers.</p>
+<p>The authentication mechanism for the web application server is set to <strong>none</strong> (default). Additional configuration is needed
+if you want to use any of the advanced application-facing authentication mechanisms like SAML 2.0, WS Federation, and
+OpenID Connect 1.0.</p>
+<section id="create-download-and-install-an-access-identity-connector">
+<h2>Create, download and install an Access Identity Connector<a class="headerlink" href="#create-download-and-install-an-access-identity-connector" title="Permalink to this heading"></a></h2>
+<p>You can configure EAA connectors in different virtual environments and cloud platforms. In this example, you create and deploy
+a connector for Amazon AWS environment for any access application.</p>
+<ol class="arabic simple">
+<li><p>Log in to Enterprise Center.</p></li>
+<li><p>In the Enterprise Center navigation menu, select <strong>Application Access &gt; Clients &amp; Connectors &gt; Access and Identity Connectors</strong>.</p></li>
+<li><p>Click <strong>Add New Connector</strong> (+). Enter a connector name and an optional description.</p></li>
+<li><p>Select a connector package <strong>type</strong>. The package type corresponds to the virtual environment where you are installing the connector.
+For example, if you install the connector on the Amazon AWS environment, select package type <strong>Amazon AWS EC2/VPC</strong>.</p></li>
+<li><p>Optionally, <strong>Enable Debugging</strong>, if you wish Akamai IT to have access to debug issues with your connector.</p></li>
+<li><p>Click <strong>Save Connector</strong> (✓). The status of the connector changes to <strong>Created (Download CloudFormation Template)</strong>.</p></li>
+<li><p>Click the connector on the connector list page.</p></li>
+<li><p>The connector file opens in a separate browser window.</p></li>
+<li><p>Download and save the connector file. The connector file is used later to set up the connector in the virtual environment.</p></li>
+<li><p>Log in to your AWS console and select <strong>AWS services menu &gt; AWS CloudFormation &gt; CREATE STACK</strong>.</p></li>
+</ol>
+<ol class="loweralpha simple">
+<li><p>Under <strong>Create Template</strong>, select <strong>Upload a template to Amazon S3</strong>.</p></li>
+<li><p>Click <strong>Choose File</strong> and select the downloaded <strong>CloudFormation template</strong> file.</p></li>
+<li><p>Enter a stack name, NAT instance type, VPC ID, and subnet information and click <strong>Next</strong>.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For the NAT instance type recommended minimum is of m4.large.</p>
+</div>
+<ol class="loweralpha simple" start="4">
+<li><p>Complete the configuration of tags, storage, and other features as needed. Since AWS does not use swap space for storage,
+you need a minimum of 12 GB of RAM memory.</p></li>
+</ol>
+<ol class="arabic simple" start="11">
+<li><p>Click <strong>CREATE</strong>.
+Once the stack creation is complete, the connector instance starts and automatically connects to the EAA Cloud.</p></li>
+<li><p>Next, return to the Enterprise Center.</p></li>
+<li><p>In the Enterprise Center navigation menu, select <strong>Application Access &gt; Clients &amp; Connectors &gt; Access and Identity Connectors</strong>.</p></li>
+<li><p>Search for your connector and click <strong>Approve</strong> next to it.</p></li>
+<li><p>Verify that the connector shows the private and public IP addresses assigned to it.
+The connector reaches out to the EAA Cloud after installation.
+The status changes to <strong>Ready</strong> and <strong>Connector is running</strong>.</p></li>
+</ol>
+<p>The connector can do dialouts from the datacenter to the EAA Cloud, connecting the application inside the datacenter to the Internet
+through the EAA Cloud and the user.</p>
+<p>Next, add users to the cloud directory.</p>
+</section>
+<section id="add-users-to-the-cloud-directory">
+<h2>Add users to the Cloud Directory<a class="headerlink" href="#add-users-to-the-cloud-directory" title="Permalink to this heading"></a></h2>
+<p>You need to add users who can access the bookmark application to the cloud directory. Enterprise Center allows you to
+quickly configure an ​Akamai​ Cloud directory.</p>
+<ol class="arabic simple">
+<li><p>Log in to Enterprise Center.</p></li>
+<li><p>In the Enterprise Center navigation menu, select <strong>Application Access &gt; Identity &amp; Users &gt; Directories</strong>.</p></li>
+<li><p>Select <strong>Cloud Directory</strong>.</p></li>
+<li><p>In <strong>Users</strong>, click <strong>Add New User (+)</strong>. Enter email, first name, and last name.</p></li>
+<li><p>Click <strong>Send Invite</strong>. New users receive an email to create a password and complete their account authorization.</p></li>
+<li><p>Click <strong>Save User Changes</strong> (✓).</p></li>
+</ol>
+<p>New users are now added to the Enterprise Application Access default directory, EAA Cloud directory.</p>
+<p>Next, create an ​Akamai​ Identity provider (IdP).</p>
+</section>
+<section id="create-an-akamai-identity-provider-idp-associate-the-cloud-directory-and-deploy-the-idp">
+<h2>Create an ​Akamai​ Identity Provider (IdP), associate the Cloud Directory, and deploy the IdP<a class="headerlink" href="#create-an-akamai-identity-provider-idp-associate-the-cloud-directory-and-deploy-the-idp" title="Permalink to this heading"></a></h2>
+<p>Identity providers (IdPs) manage user identity information and provide single sign-on (SSO) and multi-factor authentication (MFA).</p>
+<p>Associate an IdP to the previously created directory to allow users to authenticate to your bookmark application.</p>
+<ol class="arabic simple">
+<li><p>Log in to Enterprise Center.</p></li>
+<li><p>In the Enterprise Center navigation menu, select <strong>Application Access &gt; Identity &amp; Users &gt; Identity Providers</strong>.</p></li>
+<li><p>Click <strong>Add Identity provider (+)</strong>. Enter a name, description, and select the provider type as ​Akamai​, for example, IDP2.</p></li>
+<li><p>Click <strong>Continue</strong>.</p></li>
+<li><p>In <strong>Settings &gt; General &gt; Identity server</strong>  enter a URL. Leave all other settings set to default.</p></li>
+<li><p>Click <strong>Save</strong>.</p></li>
+<li><p>In <strong>Directories</strong>, click <strong>Associate (+)</strong></p></li>
+</ol>
+<figure class="align-default">
+<img alt="_images/add_cloud_dir_idp.jpg" src="_images/add_cloud_dir_idp.jpg" />
+</figure>
+<ol class="arabic simple" start="8">
+<li><p>Select the <strong>Cloud Directory</strong> and click <strong>Associate</strong>. The cloud directory appears under the <strong>Directories</strong> tab.</p></li>
+<li><p>Leave the default settings in the <strong>Login portal</strong> and click <strong>Save</strong>.</p></li>
+<li><p>Hover over the <strong>Status</strong> of the identity provider, if there are no errors, <strong>Ready for deployment</strong> appears.</p></li>
+</ol>
+<figure class="align-default">
+<img alt="_images/idp_ready_to_deploy.jpg" src="_images/idp_ready_to_deploy.jpg" />
+</figure>
+<ol class="arabic simple" start="11">
+<li><p>Click <strong>Deploy IDP</strong>.</p></li>
+<li><p>Now <strong>Pending Changes</strong> appears. All the pending deployment changes are shown. Make sure that IDP2 is selected. If you select any
+other IdPs, they are simultaneously deployed.</p></li>
+</ol>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="_images/pending_changes_tab_idp.jpg"><img alt="Pending Changes tab for Identity Provider" src="_images/pending_changes_tab_idp.jpg" style="width: 374.5px; height: 373.79999999999995px;" /></a>
+<figcaption>
+<p><span class="caption-text"><em>Pending Changes tab for the selected Identity Provider</em></span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic" start="13">
+<li><p>Click <strong>Deploy</strong>.</p></li>
+<li><p>Add a <strong>Deploy Confirmation</strong> message in the dialog box and click <strong>Deploy</strong>.</p>
+<blockquote>
+<div><p>The deployment may take several minutes to complete. When the deployment flow is complete, <strong>Idp is Deployed</strong> appears.</p>
+</div></blockquote>
+</li>
+</ol>
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/idp_deployed.jpg"><img alt="Identity Provider Deployed" src="_images/idp_deployed.jpg" style="width: 497.6px; height: 183.20000000000002px;" /></a>
+</figure>
+<p>The cloud directory is now associated with the new identity provider. Users from to the directory can access applications
+associated with the identity provider.</p>
+<p>Next, configure your Web (HTTPS) application.</p>
+</section>
+<section id="configure-a-web-application">
+<h2>Configure a Web application<a class="headerlink" href="#configure-a-web-application" title="Permalink to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Log in to Enterprise Center.</p></li>
+<li><p>In the Enterprise Center navigation menu, select <strong>Application Access &gt; Applications &gt; Applications</strong>.</p></li>
+<li><p>Click <strong>Add Application</strong> (+).Enter the application name and description, and select <strong>New Access App</strong> in <strong>Type</strong>.</p></li>
+<li><p>Click <strong>Add Application</strong>. Your application detail setting page opens.</p></li>
+<li><p>In <strong>App Settings</strong> for <strong>Akamai Cloud Zone</strong>, select the cloud zone located closest to the datacenter where your
+application resides.</p></li>
+<li><p>In <strong>External Host</strong> enter the external host name for the application where the users can access the application. You can use
+your own domain or enter a ​Akamai​ domain:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>If you select <strong>Use Akamai domain</strong>, enter a URL, for example, <a class="reference external" href="https://sample-web-app.go.akamai-access.com">https://sample-web-app.go.akamai-access.com</a>.</p></li>
+<li><p>If you use the <strong>​Akamai​ domain</strong>, you don’t need to configure a certificate.</p></li>
+</ul>
+</div></blockquote>
+<p>If you select Use your domain, enter your own domain.</p>
+</li>
+</ol>
+<figure class="align-default" id="id2">
+<img alt="Configure External App Hostname" src="_images/web_app_external_host.jpg" />
+<figcaption>
+<p><span class="caption-text"><em>Configure the external hostname for your Web app and selecting the cloud zone</em></span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you use your own domain, you need to add a certificate and associate the certificate for your own domain and set up a
+CNAME redirect for the application.</p>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>To add connectors to service your application, go to <strong>Connectors</strong>.</p></li>
+<li><p>Click <strong>Associate connector</strong> and select one or more connectors. Click <strong>Associate</strong>.
+To remove a connector click <strong>Disassociate</strong> next to it.The associated connector appears under the <strong>Connectors</strong>.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The connector must be running to serve the application.</p>
+</div>
+<ol class="arabic simple" start="9">
+<li><p>In the <strong>Server Settings</strong>, configure the following:</p>
+<ol class="loweralpha simple">
+<li><p><strong>Verify Origin Server Certificate</strong> (off-by-default). Allows you to do the origin server certificate validation (recommended).
+Also, select a root CA certificate.</p></li>
+<li><p><strong>ROOT CA Certificate</strong>. Choose the root CA certificate with the full bundle you uploaded into Enterprise Center after
+uploading a certificate in <strong>Certificates &gt; Certificates</strong>.</p></li>
+<li><p><strong>Application Server IP/FQDN</strong>. In Protocol select <strong>https</strong> (default) for secure web traffic or <strong>http</strong> for http traffic.
+In <strong>Host: Port</strong> enter a valid internal IP address for the server or the fully qualified domain name (FQDN) that you use to
+access this web server when inside your company’s network. Also, enter an IP port number.</p></li>
+</ol>
+</li>
+</ol>
+<figure class="align-default" id="id3">
+<img alt="Configure App Server settings" src="_images/web_app_server_settings.jpg" />
+<figcaption>
+<p><span class="caption-text"><em>Configure App Server settings and FQDN</em></span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If no port is specified, port <cite>443</cite> is the default port.</p>
+</div>
+<ol class="arabic simple" start="10">
+<li><p>To configure multiple applications servers for load balancing go to <strong>Server load balancing</strong>, click <strong>Add New Server</strong> (+).
+Enterprise Application Access supports various load balancing techniques including round-robin, session or cookie stickiness,
+and source IP hash in <strong>Advanced</strong> settings.</p></li>
+<li><p>To configure access control rules of who can access your application and when they can access, go to <strong>Access</strong>  tab, enable <strong>Access</strong>.</p></li>
+<li><p>To create a new rule, click <strong>Add Rule</strong> (+). To edit an existing rule, click <strong>Edit Rule</strong>. A modal window appears.</p></li>
+<li><p>In <strong>Rule Name</strong> enter a name for the rule and click <strong>Add</strong>.</p></li>
+<li><p>In <strong>Type</strong> select <strong>Time</strong>.</p></li>
+<li><p>In <strong>Operator</strong> select either <cite>is`</cite> or <cite>is not</cite>.</p></li>
+<li><p>In <strong>Value</strong> enter the value if applicable, or select the value for the access control type.</p></li>
+<li><p>Click <strong>Time</strong> to configure the time-based settings:</p></li>
+</ol>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>In <strong>Start Time</strong> and <strong>End Time</strong> enter a time in hh:mm, AM-PM format.</p></li>
+<li><p>Select <strong>time zone</strong>.</p></li>
+<li><p>Select the days of the week for when you want to deny access.</p></li>
+</ol>
+</div></blockquote>
+<ol class="arabic simple" start="18">
+<li><p>Click <strong>Save Rule</strong>.</p></li>
+</ol>
+<figure class="align-default" id="id4">
+<img alt="ACL rule" src="_images/acl_user_time.jpg" />
+<figcaption>
+<p><span class="caption-text"><em>For example, ACL Rule: RestrictUserAccessRule 1, that restricts User A from accessing the application from 1:00 - 2:00 AM, Saturdays, PST.</em></span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="19">
+<li><p>You can optionally configure the following settings for your web application:</p></li>
+</ol>
+<blockquote>
+<div><ul>
+<li><p><strong>Services</strong>. Add any services like compression, URL rewrite rules, ICAP, and URL path-based policies.</p></li>
+<li><p><strong>Advanced</strong>. You can configure more advanced settings.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>If <strong>Application-facing authentication mechanism</strong> is <strong>SAML 2.0</strong>, also configure <strong>SAML Settings</strong>.</p></li>
+<li><p>If <strong>Application-facing authentication mechanism</strong> is <strong>WS-Federation</strong>, also configure <strong>WS-Federation Settings</strong>.</p></li>
+<li><p>If <strong>Application-facing authentication mechanism</strong> is <strong>Open ID Connect 1.0</strong>, also configure <strong>OpenID</strong>.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="20">
+<li><p>Next, configure the authentication source and deploy your application.</p></li>
+</ol>
+</section>
+<section id="add-an-authentication-source-and-deploy-the-application">
+<h2>Add an authentication source, and deploy the application<a class="headerlink" href="#add-an-authentication-source-and-deploy-the-application" title="Permalink to this heading"></a></h2>
+<p>Assign the previously deployed identity provider (IdP) and directory to the Web application and deploy your application.</p>
+<ol class="arabic">
+<li><p>Log in to Enterprise Center.</p></li>
+<li><p>In the Enterprise Center navigation menu, select <strong>Application Access &gt; Applications &gt; Applications</strong>.</p></li>
+<li><p>Select your application to open it.</p></li>
+<li><p>Click the <strong>Authentication</strong> tab and add the authentication for your application:</p>
+<ol class="loweralpha simple">
+<li><p>Click <strong>Enable Authentication</strong>.</p></li>
+<li><p>Select Identity provider from the list.</p></li>
+<li><p>Click <strong>Assign Directory</strong> and select the Cloud Directory from the list.</p></li>
+<li><p>Click <strong>Associate</strong>.</p></li>
+</ol>
+<blockquote>
+<div><p>The directory appears under the <strong>Assigned Directories</strong>.</p>
+<figure class="align-default">
+<img alt="_images/add_cloud_dir_idp2.jpg" src="_images/add_cloud_dir_idp2.jpg" />
+</figure>
+</div></blockquote>
+</li>
+<li><p>Leave the <strong>History</strong> in the application configuration default and click <strong>Save</strong>.</p></li>
+<li><p>Hover over the Deployment symbol, if all configurations are correct, <strong>Ready for Deployment</strong> appears.</p></li>
+<li><p>To deploy the application, click <strong>Deploy Application</strong>.</p></li>
+<li><p>Now <strong>Pending Changes</strong> appears. All the pending deployment changes are shown. Make sure you selected your application. If you select any others,
+they are simultaneously deployed.</p>
+<figure class="align-default">
+<img alt="_images/app_ready_to_deploy.jpg" src="_images/app_ready_to_deploy.jpg" />
+</figure>
+</li>
+<li><p>Click <strong>Deploy</strong>, add a <strong>Deploy Confirmation</strong> message in the dialog box, and click <strong>Deploy</strong>.</p>
+<p>The deployment may take several minutes to complete. When completed, <strong>App Deployed</strong> appears.</p>
+<blockquote>
+<div><figure class="align-default">
+<a class="reference internal image-reference" href="_images/app_deployed.jpg"><img alt="_images/app_deployed.jpg" src="_images/app_deployed.jpg" style="width: 325.8px; height: 48.6px;" /></a>
+</figure>
+</div></blockquote>
+</li>
+</ol>
+<p>Next, verify if you can access the application.</p>
+</section>
+<section id="verify-you-can-access-the-web-application-from-the-eaa-login-portal">
+<h2>Verify you can access the Web Application from the EAA Login Portal<a class="headerlink" href="#verify-you-can-access-the-web-application-from-the-eaa-login-portal" title="Permalink to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Open a new tab and enter the external host name URL you created for the web application in the previous steps.
+For example, <cite>https://sample-web-app.go.akamai-access.com</cite>.</p></li>
+<li><p>Log in with your username and password you created and added to the cloud directory.</p></li>
+<li><p>If you are User A, you should be able to access the web application in the non-restricted access days and times.</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="bookmark_app.html" class="btn btn-neutral float-left" title="Get started with a Bookmark App" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tcp_app.html" class="btn btn-neutral float-right" title="Get started with a TCP-type Client-Access App" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mahesh.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

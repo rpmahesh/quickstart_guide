@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get started with a Bookmark App &mdash; EAA Quickstart Guide 0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to EAA Quickstart Guide!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            EAA Quickstart Guide
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Bookmark App</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Get started with a Bookmark App</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#add-users-to-the-cloud-directory">Add users to the Cloud Directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-an-akamai-identity-provider-idp-associate-the-cloud-directory-and-deploy-the-idp">Create an ​Akamai​ Identity Provider (IdP), associate the Cloud Directory, and deploy the IdP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configure-a-bookmark-application">Configure a bookmark application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#add-an-authentication-source-and-deploy-the-application">Add an authentication source, and deploy the application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#verify-you-can-access-the-app-from-the-eaa-login-portal">Verify you can access the app from the EAA Login Portal</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">EAA Quickstart Guide</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Get started with a Bookmark App</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/bookmark_app.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="get-started-with-a-bookmark-app">
+<span id="getstartedwithbookmarkapp"></span><h1>Get started with a Bookmark App<a class="headerlink" href="#get-started-with-a-bookmark-app" title="Permalink to this heading"></a></h1>
+<p>Bookmark applications are simple applications that you can publish as a link on the EAA Login Portal but are not formally
+secured behind Enterprise Application Access. A bookmark application is like a Hello World application. Set it up and
+learn how to add users to the Enterprise Application Access Cloud directory, create an identity provider (IdP), associate
+the directory and deploy the IdP, configure an application, and verify you can access the bookmark URL from the
+application inside Enterprise Application Access Cloud.</p>
+<section id="add-users-to-the-cloud-directory">
+<h2>Add users to the Cloud Directory<a class="headerlink" href="#add-users-to-the-cloud-directory" title="Permalink to this heading"></a></h2>
+<p>You need to add users who can access the bookmark application to the cloud directory. Enterprise Center allows you to
+quickly configure an ​Akamai​ Cloud directory.</p>
+<ol class="arabic simple">
+<li><p>Log in to Enterprise Center.</p></li>
+<li><p>In the Enterprise Center navigation menu, select <strong>Application Access &gt; Identity &amp; Users &gt; Directories</strong>.</p></li>
+<li><p>Select <strong>Cloud Directory</strong>.</p></li>
+<li><p>In <strong>Users</strong>, click <strong>Add New User (+)</strong>. Enter email, first name, and last name.</p></li>
+<li><p>Click <strong>Send Invite</strong>. New users receive an email to create a password and complete their account authorization.</p></li>
+<li><p>Click <strong>Save User Changes</strong> (✓).</p></li>
+</ol>
+<p>New users are now added to the Enterprise Application Access default directory, EAA Cloud directory.</p>
+<p>Next, create an ​Akamai​ Identity provider (IdP).</p>
+</section>
+<section id="create-an-akamai-identity-provider-idp-associate-the-cloud-directory-and-deploy-the-idp">
+<h2>Create an ​Akamai​ Identity Provider (IdP), associate the Cloud Directory, and deploy the IdP<a class="headerlink" href="#create-an-akamai-identity-provider-idp-associate-the-cloud-directory-and-deploy-the-idp" title="Permalink to this heading"></a></h2>
+<p>Identity providers (IdPs) manage user identity information and provide single sign-on (SSO) and multi-factor authentication (MFA).</p>
+<p>Associate an IdP to the previously created directory to allow users to authenticate to your bookmark application.</p>
+<ol class="arabic simple">
+<li><p>Log in to Enterprise Center.</p></li>
+<li><p>In the Enterprise Center navigation menu, select <strong>Application Access &gt; Identity &amp; Users &gt; Identity Providers</strong>.</p></li>
+<li><p>Click <strong>Add Identity provider (+)</strong>. Enter a name, description, and select the provider type as ​Akamai​, for example, IDP2.</p></li>
+<li><p>Click <strong>Continue</strong>.</p></li>
+<li><p>In <strong>Settings &gt; General &gt; Identity server</strong>  enter a URL. Leave all other settings set to default.</p></li>
+<li><p>Click <strong>Save</strong>.</p></li>
+<li><p>In <strong>Directories</strong>, click <strong>Associate (+)</strong></p></li>
+</ol>
+<figure class="align-default">
+<img alt="_images/add_cloud_dir_idp.jpg" src="_images/add_cloud_dir_idp.jpg" />
+</figure>
+<ol class="arabic simple" start="8">
+<li><p>Select the <strong>Cloud Directory</strong> and click <strong>Associate</strong>. The cloud directory appears under the <strong>Directories</strong> tab.</p></li>
+<li><p>Leave the default settings in the <strong>Login portal</strong> and click <strong>Save</strong>.</p></li>
+<li><p>Hover over the <strong>Status</strong> of the identity provider, if there are no errors, <strong>Ready for deployment</strong> appears.</p></li>
+</ol>
+<figure class="align-default">
+<img alt="_images/idp_ready_to_deploy.jpg" src="_images/idp_ready_to_deploy.jpg" />
+</figure>
+<ol class="arabic simple" start="11">
+<li><p>Click <strong>Deploy IDP</strong>.</p></li>
+<li><p>Now <strong>Pending Changes</strong> appears. All the pending deployment changes are shown. Make sure that IDP2 is selected. If you select any
+other IdPs, they are simultaneously deployed.</p></li>
+</ol>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="_images/pending_changes_tab_idp.jpg"><img alt="Pending Changes tab for Identity Provider" src="_images/pending_changes_tab_idp.jpg" style="width: 374.5px; height: 373.79999999999995px;" /></a>
+<figcaption>
+<p><span class="caption-text"><em>Pending Changes tab for the selected Identity Provider</em></span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic" start="13">
+<li><p>Click <strong>Deploy</strong>.</p></li>
+<li><p>Add a <strong>Deploy Confirmation</strong> message in the dialog box and click <strong>Deploy</strong>.</p>
+<blockquote>
+<div><p>The deployment may take several minutes to complete. When the deployment flow is complete, <strong>Idp is Deployed</strong> appears.</p>
+</div></blockquote>
+</li>
+</ol>
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/idp_deployed.jpg"><img alt="Identity Provider Deployed" src="_images/idp_deployed.jpg" style="width: 497.6px; height: 183.20000000000002px;" /></a>
+</figure>
+<p>The cloud directory is now associated with the new identity provider. Users from to the directory can access applications
+associated with the identity provider.</p>
+<p>Next, configure your bookmark application.</p>
+</section>
+<section id="configure-a-bookmark-application">
+<h2>Configure a bookmark application<a class="headerlink" href="#configure-a-bookmark-application" title="Permalink to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Log in to Enterprise Center.</p></li>
+<li><p>In the Enterprise Center navigation menu, select <strong>Application Access &gt; Applications &gt; Applications</strong>.</p></li>
+<li><p>Click <strong>Add Application</strong> (+).Enter the application name and description, and select Bookmark App in <strong>Type</strong>.</p></li>
+<li><p>Click <strong>Add Application</strong>. Your application detail setting page opens.</p></li>
+<li><p>In <strong>Settings</strong> select application category (optional) and enter a bookmark URL.</p></li>
+<li><p>Click <strong>Save</strong>. Your application is configured.</p></li>
+</ol>
+<p>Next, deploy your application.</p>
+</section>
+<section id="add-an-authentication-source-and-deploy-the-application">
+<h2>Add an authentication source, and deploy the application<a class="headerlink" href="#add-an-authentication-source-and-deploy-the-application" title="Permalink to this heading"></a></h2>
+<p>Assign the previously deployed identity provider (IdP) and directory to the bookmark application and deploy your application.</p>
+<ol class="arabic">
+<li><p>Log in to Enterprise Center.</p></li>
+<li><p>In the Enterprise Center navigation menu, select <strong>Application Access &gt; Applications &gt; Applications</strong>.</p></li>
+<li><p>Select your application to open it.</p></li>
+<li><p>Click the <strong>Authentication</strong> tab and add the authentication for your application:</p>
+<ol class="loweralpha simple">
+<li><p>Click <strong>Enable Authentication</strong>.</p></li>
+<li><p>Select Identity provider from the list.</p></li>
+<li><p>Click <strong>Assign Directory</strong> and select the Cloud Directory from the list.</p></li>
+<li><p>Click <strong>Associate</strong>.</p></li>
+</ol>
+<blockquote>
+<div><p>The directory appears under the <strong>Assigned Directories</strong>.</p>
+<figure class="align-default">
+<img alt="_images/add_cloud_dir_idp2.jpg" src="_images/add_cloud_dir_idp2.jpg" />
+</figure>
+</div></blockquote>
+</li>
+<li><p>Leave the <strong>History</strong> in the application configuration default and click <strong>Save</strong>.</p></li>
+<li><p>Hover over the Deployment symbol, if all configurations are correct, <strong>Ready for Deployment</strong> appears.</p></li>
+<li><p>To deploy the application, click <strong>Deploy Application</strong>.</p></li>
+<li><p>Now <strong>Pending Changes</strong> appears. All the pending deployment changes are shown. Make sure you selected your application. If you select any others,
+they are simultaneously deployed.</p>
+<figure class="align-default">
+<img alt="_images/app_ready_to_deploy.jpg" src="_images/app_ready_to_deploy.jpg" />
+</figure>
+</li>
+<li><p>Click <strong>Deploy</strong>, add a <strong>Deploy Confirmation</strong> message in the dialog box, and click <strong>Deploy</strong>.</p>
+<p>The deployment may take several minutes to complete. When completed, <strong>App Deployed</strong> appears.</p>
+<blockquote>
+<div><figure class="align-default">
+<a class="reference internal image-reference" href="_images/app_deployed.jpg"><img alt="_images/app_deployed.jpg" src="_images/app_deployed.jpg" style="width: 325.8px; height: 48.6px;" /></a>
+</figure>
+</div></blockquote>
+</li>
+</ol>
+<p>Next, verify if you can access the application.</p>
+</section>
+<section id="verify-you-can-access-the-app-from-the-eaa-login-portal">
+<h2>Verify you can access the app from the EAA Login Portal<a class="headerlink" href="#verify-you-can-access-the-app-from-the-eaa-login-portal" title="Permalink to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Open a new tab and enter the login portal URL for your IdP.</p></li>
+<li><p>Log in with your username and password you created and added to the cloud directory.</p></li>
+<li><p>Click on your bookmark application.</p></li>
+</ol>
+<p>You should be able to go to the URL you created.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to EAA Quickstart Guide!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mahesh.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
